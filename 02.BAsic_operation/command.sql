@@ -1,0 +1,22 @@
+CREATE database NID;
+
+USE NID;
+
+-- hello
+CREATE TABLE NID
+(
+	NID CHAR(10) PRIMARY KEY,
+	Name VARCHAR(50) NOT NULL,
+	Age INT CHECK(Age >= 18),
+	Email VARCHAR(50) UNIQUE,
+	Address VARCHAR(50)
+);
+
+CREATE TABLE NID
+(
+	NID VARCHAR(20),
+	Name VARCHAR(50),
+	Age INT(3),
+	Email VARCHAR(50),
+	Address VARCHAR(50)
+);
