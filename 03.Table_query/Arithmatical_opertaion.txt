@@ -1,0 +1,3 @@
+SELECT Roll + Roll - 66 from student 
+       ----------------
+WHERE Name='rajib'

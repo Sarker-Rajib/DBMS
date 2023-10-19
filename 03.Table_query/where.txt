@@ -1,0 +1,3 @@
+-----------------------------------
+query by roll (any option can be chosen)
+SELECT * from student WHERE Roll=1235

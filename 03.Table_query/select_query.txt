@@ -1,0 +1,5 @@
+-- 1. see data one --
+SELECT Name from student;
+
+-- see all data --
+SELECT * from student;
