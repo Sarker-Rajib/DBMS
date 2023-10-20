@@ -1,0 +1,105 @@
+1. Create tables
+    a. Make a student table
+        ANS: 
+        CREATE table Student(
+            Roll INT PRIMARY KEY,
+            Name VARCHAR(48),
+            Class VARCHAR(10),
+            Section VARCHAR(10)
+        );
+
+    b. Make a Library table
+        ANS:
+        CREATE table Library(
+            Hired_by_roll INT,
+            Hired_by_Name VARCHAR(48),
+            Book_Name VARCHAR(50),
+        );
+
+    c. Make a Fees table
+        ANS:
+        CREATE table Fees(
+            Roll INT,
+            Name VARCHAR(48),
+            Fee_for VARCHAR(50),
+            Amount INT
+        );
+
+2. Add proper constraints with the No 1 question
+    a. Make a student table
+        ANS: 
+        CREATE table Student(
+            Roll INT PRIMARY KEY,
+            Name VARCHAR(48) NOT NULL,
+            Class VARCHAR(10) NOT NULL,
+            Section VARCHAR(10) NOT NULL
+        );
+
+    b. Make a Library table
+        ANS:
+        CREATE table Library(
+            Hired_by_roll INT,
+            Hired_by_Name VARCHAR(48) NOT NULL,
+            Book_Name VARCHAR(50) NOT NULL,
+            FOREIGN KEY (Hired_by_roll) REFERENCES Student (Roll)
+        );
+
+    c. Make a Fees table
+        ANS:
+        CREATE table Fees(
+            Roll INT,
+            Name VARCHAR(48) NOT NULL,
+            Fee_for VARCHAR(50) NOT NULL,
+            Amount INT,
+            FOREIGN KEY (Roll) REFERENCES Student (Roll)
+        );
+
+3. Write the differences between data and information
+    ANS: 
+        Data: Any values from information is known as data.
+        Information: Collection of data that is well organised and easy to understand known as Information.
+    
+4. In MySQL, Update and Delete query wasn’t executing, what was the
+reason and how to run those query? Write the code to enable the
+feature. (If you followed the class, you should know this).
+    ANS: 
+        We need to write this line -
+           => SET SQL_SAFE_UPDATES = 0;
+        to of safe update security.
+        It is safe to on safe update option after the operation -
+           => SET SQL_SAFE_UPDATES = 1;
+
+-------------------------------------------------------------------------
+ Answer the following questions with this table data. Table name Employee.
+----------------------------------------------------------------
+|    EmployeeID   FirstName   LastName    Age   Department     |
+|    1            John        Doe	      28	Sales          |          
+|    2	          Jane	      Smith	      32	Marketing      |            
+|    3	          Michel	  Jackson	  35	Finance        |         
+|    4	          Sarah	      Brown	      30	HR             |           
+|    5	          William	  Davis	      25	Engineering    |              
+|    6	          Emily	      Wilson	  28	Sales          |           
+|    7	          Robert	  Lee	      33	Marketing      |           
+|    8	          Laura	      Hall	      29	Finance        |           
+|    9	          Thomas	  White	      31	HR             |        
+|    10	          Olivia	  Clark	      27	Engineering    |           
+----------------------------------------------------------------
+5. Write a query to show the distinct department names
+    ANS: => SELECT distinct Department from Employee;
+
+6. Write a query to show the LastNames of the employees sorted by
+descending ages
+    ANS: => SELECT LastName FROM Employee order by Age desc;
+
+7. Write a query to show the employee LastName whose age is greater
+than 30 and works in Marketing department.
+    ANS: => SELECT LastName FROM Employee WHERE Age > 30 and department = 'Marketing';
+
+8. Write a query to select all the employees
+    ANS: => SELECT * from Employee;
+
+9. Write a query to get employees whose names includes ‘son’
+    ANS: => SELECT * FROM Employee where FirstName LIKE '%son%' or LastName LIKE '%son%';
+
+10. Write a query to get the engineers
+    ANS: => SELECT * FROM Employee WHERE department = 'Engineering';
