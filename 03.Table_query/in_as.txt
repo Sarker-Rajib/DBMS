@@ -2,11 +2,17 @@ IN, NOT IN, LIKE, AS
 ------------------------------
 SELECT ---
 FROM ---
+/////////// IN ///////////////
 WHERE ---
         where roll = 102                
         where roll = 103        or      where roll IN(102, 103, 105)
         where roll = 105
 
+
+/////////// LIKE ///////////////
 where name LIKE 'Rahim %'
 where name LIKE '%Rahim'
 where name LIKE '%Rahim%'
+
+
+/////////// LIKE ///////////////
